@@ -87,14 +87,13 @@
     [self showSaveTipAlert];
 }
 
-// TODO: Connect actions for splitChanged, sliderChanged, and Save Tip button
 
 
 // MARK: - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _tipController.tipCount;
+    return [_tipController tipCount]; // since tipCount is a method we can use the method syntax
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
