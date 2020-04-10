@@ -31,4 +31,11 @@
     return _internalTips.copy; // copy of a mutable thing is always an immutable thing because now different from one we were working with
 }
 
+- (NSUInteger)tipCount
+{
+    return _internalTips.count;
+}
+
+
+
 @end
