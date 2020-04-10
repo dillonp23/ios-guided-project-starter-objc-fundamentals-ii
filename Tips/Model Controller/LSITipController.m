@@ -36,6 +36,23 @@
     return _internalTips.count;
 }
 
+/* swift equivalent
+ 
+ var tipCount: Uint {
+    return tips.count
+ }
+ wed be using a computed property but all propertie in Objc are computed
+ */
+
+- (LSITip *)tipAtIndex:(NSUInteger)index
+{
+    return [_internalTips objectAtIndex:index]; // same syntax of this would be _internalTips[index]
+}
+
+- (void)addTip:(LSITip *)aTip
+{
+    [_internalTips addObject:aTip];
+}
 
 
 @end
