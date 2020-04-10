@@ -8,6 +8,7 @@
 
 #import "LSITipViewController.h"
 #import "LSITipController.h"
+#import "LSITip.h"
 
 @interface LSITipViewController ()
     <UITableViewDataSource,
@@ -15,7 +16,7 @@
 
 // Private Properties
 @property (nonatomic) double total;
-@property (nonatomic) int split;
+@property (nonatomic) NSInteger split;
 @property (nonatomic) double percentage;
 @property (nonatomic) double tip;
 @property (nonatomic) LSITipController *tipController;
@@ -91,19 +92,35 @@
 
 // MARK: - UITableViewDataSource
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _tipController.tipCount;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TipCell" forIndexPath:indexPath ];
+    // if identifier not found it will return nil for the cell
+    
+    LSITip *tip = [_tipController tipAtIndex:indexPath.row];
+    cell.textLabel.text = tip.name; // grabs a copy of the name
+    // we don;t need the guard like in swift cause the cell can be nil
+    
+    return cell; // if the cell is nil then Obj-c doesn't care and won't crash
+}
 
 // MARK: - UITableViewDelegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-// TODO: Load the selected tip from the controller
-
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LSITip *tip = [_tipController tipAtIndex:indexPath.row];
+    _total = tip.total;
+    _split = tip.splitCount;
+    _percentage = tip.tipPercentage;
+    
+    [self updateViews];
+    [self calculateTip];
+}
 
 // MARK: - Alert Helper
 
