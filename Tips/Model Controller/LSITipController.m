@@ -15,11 +15,20 @@
 }
 
 
-
 @end
 
 @implementation LSITipController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _internalTips = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
+- (NSArray<LSITip *> *)tips // contents of array conform to these types which is why we use the <type *> before the *
+{
+    return _internalTips.copy; // copy of a mutable thing is always an immutable thing because now different from one we were working with
+}
 
 @end
