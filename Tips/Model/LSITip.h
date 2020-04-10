@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSITip : NSObject
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) double total; // no star because not an object but its a primitive value
-@property (nonatomic) NSInteger splitCount; // same here
-@property (nonatomic) double tipPercentage;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) double total; // no star because not an object but its a primitive value
+@property (nonatomic, readonly) NSInteger splitCount; // same here
+@property (nonatomic, readonly) double tipPercentage;
 
 
 @end
