@@ -7,10 +7,16 @@
 //
 
 #import "LSITipViewController.h"
+#import "LSITipController.h"
 
 @interface LSITipViewController ()
 
 // Private Properties
+@property (nonatomic) double total;
+@property (nonatomic) int split;
+@property (nonatomic) double percentage;
+@property (nonatomic) double tip;
+@property (nonatomic) LSITipController *tipController;
 
 // Private IBOutlets
 @property (nonatomic) IBOutlet UITextField *totalTextField;
