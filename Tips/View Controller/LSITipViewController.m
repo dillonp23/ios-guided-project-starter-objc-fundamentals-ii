@@ -13,6 +13,13 @@
 // Private Properties
 
 // Private IBOutlets
+@property (nonatomic) IBOutlet UITextField *totalTextField;
+@property (weak, nonatomic) IBOutlet UILabel *splitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *splitStepper;
+@property (weak, nonatomic) IBOutlet UISlider *percentageSlider;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 // Private Methods
 
