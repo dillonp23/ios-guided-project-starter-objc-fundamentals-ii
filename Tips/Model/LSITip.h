@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSITip : NSObject
 
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly, copy) NSString *name; // copy will make sure whatever is saved inside model object, its not version of string that can be changed by something else - due to mutability
 @property (nonatomic, readonly) double total; // no star because not an object but its a primitive value
 @property (nonatomic, readonly) NSInteger splitCount; // same here
 @property (nonatomic, readonly) double tipPercentage;
