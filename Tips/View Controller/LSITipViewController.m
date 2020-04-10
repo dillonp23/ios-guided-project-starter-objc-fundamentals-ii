@@ -10,6 +10,8 @@
 #import "LSITipController.h"
 
 @interface LSITipViewController ()
+    <UITableViewDataSource,
+    UITableViewDelegate>
 
 // Private Properties
 @property (nonatomic) double total;
@@ -28,6 +30,11 @@
 @property (nonatomic) IBOutlet UITableView *tableView;
 
 // Private Methods
+/// use cmd+option+/ to add documentation
+
+- (void)calculateTip;
+- (void)updateViews;
+- (void)saveTipNamed:(NSString *)aName;
 
 @end
 
@@ -35,6 +42,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tipController = [[LSITipController alloc] init];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    // calculate the initial tip when the view is first loaded
+    [self calculateTip];
     
 }
 
