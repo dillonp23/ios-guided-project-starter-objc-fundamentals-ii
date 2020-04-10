@@ -67,7 +67,24 @@
 }
 
 // MARK: - IBActions
+// selector = name of action
 
+- (IBAction)updateSplit:(id)sender
+{
+    _split = round(_splitStepper.value); // round is a function
+    [self calculateTip];
+}
+
+- (IBAction)updatePercentage:(id)sender
+{
+    _percentage = round(_percentageSlider.value);
+    [self calculateTip];
+}
+
+- (IBAction)saveTip:(id)sender
+{
+    [self showSaveTipAlert];
+}
 
 // TODO: Connect actions for splitChanged, sliderChanged, and Save Tip button
 
