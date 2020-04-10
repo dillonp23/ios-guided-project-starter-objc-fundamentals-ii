@@ -25,6 +25,7 @@
         _internalTips = [[NSMutableArray alloc] init];
         
 #ifdef DEBUG // preprocessor language, will only include this code if in debug mode
+        // FIXME: Test Mode (remove for production) can list and search for these in project
         [self addTestData]; // only use this method in development
 #endif
     }
@@ -44,6 +45,10 @@
                               splitCount:8
                               tipPercentage:25.0]];
 }
+// MARK: - Conevenience Accessors
+
+//another way to say Mark only used in objective-C
+#pragma mark - Convenience Accessors
 
 - (NSArray<LSITip *> *)tips // contents of array conform to these types which is why we use the <type *> before the *
 {
