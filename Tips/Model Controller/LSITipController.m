@@ -8,6 +8,18 @@
 
 #import "LSITipController.h"
 
+// declare a private inteface to contain a private mutable array
+@interface LSITipController () {
+    // declare new instance property so we can change the array
+    NSMutableArray *_internalTips;
+}
+
+
+
+@end
+
 @implementation LSITipController
+
+
 
 @end
