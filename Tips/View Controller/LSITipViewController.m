@@ -14,12 +14,12 @@
 
 // Private IBOutlets
 @property (nonatomic) IBOutlet UITextField *totalTextField;
-@property (weak, nonatomic) IBOutlet UILabel *splitLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
-@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
-@property (weak, nonatomic) IBOutlet UIStepper *splitStepper;
-@property (weak, nonatomic) IBOutlet UISlider *percentageSlider;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) IBOutlet UILabel *splitLabel; // use "weak" to make sure that outlets arent retained by multiple sources (i.e view controller and IB file) - use with a delegate
+@property (nonatomic) IBOutlet UILabel *tipLabel;
+@property (nonatomic) IBOutlet UILabel *percentageLabel;
+@property (nonatomic) IBOutlet UIStepper *splitStepper;
+@property (nonatomic) IBOutlet UISlider *percentageSlider;
+@property (nonatomic) IBOutlet UITableView *tableView;
 
 // Private Methods
 
