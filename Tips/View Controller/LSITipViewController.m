@@ -7,8 +7,8 @@
 //
 
 #import "LSITipViewController.h"
-#import "LSITipController.h"
-#import "LSITip.h"
+#import "../Model Controller/LSITipController.h"
+#import "../Model/LSITip.h"
 
 @interface LSITipViewController ()
     <UITableViewDataSource,
