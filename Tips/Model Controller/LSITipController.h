@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 // first thing we want is the list of tips and we want it to be read only no writing to it, and also use copy becuase NSArray has a mutable counterpart
 @property (nonatomic, readonly, copy) NSArray<LSITip *> *tips;
+@property (nonatomic, readonly) NSUInteger tipCount; // will access internal array and ask or its count
 
+- (LSITip *)tipAtIndex: (NSUInteger)index; // using encapsulation to access component of internal array without making fully available
+-(void)addTip:(LSITip *)aTip; // use the "a" to differeniate between an internal tip
 
 @end
 
